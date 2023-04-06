@@ -3,7 +3,7 @@ cd ~/catkin_ws/src && git clone https://github.com/Slamtec/rplidar_ros.git && cd
 
 export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_bringup turtlebot3_robot.launch
 
-export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_slam turtlebot3_gmapping.launch
+export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_slam turtlebot3_slam.launch
 
 View frames can generate a pdf file with a graphical representation of the complete tf tree. It also generates a number of time-related statistics. To run view frames, type:
 
