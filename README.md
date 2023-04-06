@@ -1,3 +1,6 @@
+
+cd ~/catkin_ws/src && git clone https://github.com/Slamtec/rplidar_ros.git && cd .. && catkin_make
+
 export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_bringup turtlebot3_robot.launch
 
 export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_slam turtlebot3_gmapping.launch
