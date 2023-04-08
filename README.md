@@ -124,8 +124,20 @@ The yaw angle equal atan(my,mx).
 
 
  
+PART 4: TRANSFORMATION IN ROBOTIC
 
+This section very importance for the autonomous robot system. If you already learn about robot engineering subject, you heard about "transformation" and "frame". In ROS, we dont use "frame", we use "link", it has the same meaning.
+So in mobile robot, how many link was used? The answer is it depend on your own robot, the ROBOTIS's open source contain a lot of link, but to me, it is not neccessary to use all of it. 
 
+To me, I used "map", "odom", "base_link", "laser", "wheel_right_link", "wheel_left_link" and "imu_link". It is all about I need.
+You still work well at SLAM section, but when getting NAVIGATION STACK section, you will encounter some error if dont understanding fully. 
+
+The consecutive transformation will be map -> odom -> base_link -> laser/wheel_right_link/wheel_left_link/imu_link
+In default, the transformation between map and odom frame wasn't defined automatically,  you need to do it.
+
+So in amcl.launch file, you need to add   <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster"
+      args="0 0 0 0 0 0 map odom 100"/>
+      
 cd ~/catkin_ws/src && git clone https://github.com/Slamtec/rplidar_ros.git && cd .. && catkin_make
 
 export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_bringup turtlebot3_robot.launch
