@@ -1,9 +1,7 @@
-
 # PART I. OVERVIEW ESSENTIAL PART COMMUNICATE
 1.Introduction
 
-One thing you need to know is that ROS supports plenty of programming languages, but popular is C++ and Python, which don’t have C language. Therefore, I conduct coding for the STM32 board (controller board) by using C++, in the embedded computer (mini pc or Ras) we run script python or C++. We will communicate between the PC with STM32 via ROS SERIAL. 
-In order to communicate with ROS, the first step we need do is install the rosserial package. 
+In order to communicate with ROS, the first step we need do is install the rosserial package. But you need to determine what is the package fit your microcontroller, I use STM32DUINO so I will install rosserial package for arduino.
 
 ![image](https://user-images.githubusercontent.com/105471622/196738444-9dd84fe6-eab7-49eb-9ac8-48d59ac44471.png)
 
@@ -21,10 +19,7 @@ Publisher node (buffer size is 1024 bytes)
 
 Subscribe node (buffer size is 1024 bytes)
 1.	cmd_vel [geometry_msgs/Twist] (compulsory)
-2.	motor_power [std_msgs/Bool] (optional)
-3.	reset [std_msgs/Empty] (compulsory)
-4.	sound [turtlebot3_msgs/Sound] (optional)
-
+2.	reset [std_msgs/Empty] (compulsory)
 
 Set up TF (Transformation) 
 1.	 Setup TF on Odometry [odom]
