@@ -158,5 +158,6 @@ In the current working folder, you should now have a file called "frames.pdf". O
  
  1. export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_gazebo turtlebot3_world.launch
  2. export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
- 3. roslaunch explore_lite explore.launch
- 4. export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_navigation move_base.launch
+ 3. export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_navigation move_base.launch
+ 4. roslaunch explore_lite explore.launch
+ 5. roslaunch error_calculator error_calculator.launch
