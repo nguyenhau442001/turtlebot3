@@ -135,7 +135,8 @@ You still work well at SLAM section, but when getting NAVIGATION STACK section, 
 The consecutive transformation will be map -> odom -> base_link -> laser/wheel_right_link/wheel_left_link/imu_link
 In default, the transformation between map and odom frame wasn't defined automatically,  you need to do it.
 
-So in amcl.launch file, you need to add   <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster"
+So in amcl.launch file, you need to add   
+<node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster"
       args="0 0 0 0 0 0 map odom 100"/>
       
 cd ~/catkin_ws/src && git clone https://github.com/Slamtec/rplidar_ros.git && cd .. && catkin_make
