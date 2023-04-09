@@ -151,3 +151,11 @@ View frames can generate a pdf file with a graphical representation of the compl
 In the current working folder, you should now have a file called "frames.pdf". Open the file:
 
   $ evince frames.pdf
+  
+ 
+ PART 5: EXPLORE_LITE (SIMULATION)
+ 
+ 1. export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_gazebo turtlebot3_world.launch
+ 2. export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+ 3. roslaunch explore_lite explore.launch
+ 4. export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_navigation move_base.launch
