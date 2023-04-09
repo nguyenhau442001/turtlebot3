@@ -136,8 +136,8 @@ The consecutive transformation will be map -> odom -> base_link -> laser/wheel_r
 In default, the transformation between map and odom frame wasn't defined automatically,  you need to do it.
 
 So in amcl.launch file, you need to add   
-<node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster"
-      args="0 0 0 0 0 0 map odom 100"/>
+node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster"
+      args="0 0 0 0 0 0 map odom 100"
       
 cd ~/catkin_ws/src && git clone https://github.com/Slamtec/rplidar_ros.git && cd .. && catkin_make
 
