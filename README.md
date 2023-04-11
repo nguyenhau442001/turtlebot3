@@ -145,6 +145,8 @@ export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_bringup turtlebot3_robot.
 
 export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_slam turtlebot3_slam.launch
 
+export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_navigation turtlebot3_navigation.launch map_file:=$HOME/map.yaml
+
 View frames can generate a pdf file with a graphical representation of the complete tf tree. It also generates a number of time-related statistics. To run view frames, type:
 
   $ rosrun tf view_frames
