@@ -5,8 +5,12 @@
   <arg name="initial_pose_y" default="0.0"/>
   <arg name="initial_pose_a" default="0.0"/>
 
+  <!-- Place map frame at odometry frame -->
+  <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster"
+      args="0 0 0 0 0 0 map odom 100"/>
+      
   <!-- AMCL -->
-  <node pkg="amcl" type="amcl" name="amcl">
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
 
     <param name="min_particles"             value="500"/>
     <param name="max_particles"             value="3000"/>
@@ -40,7 +44,7 @@
     <param name="odom_alpha3"               value="0.1"/>
     <param name="odom_alpha4"               value="0.1"/>
     <param name="odom_frame_id"             value="odom"/>
-    <param name="base_frame_id"             value="base_footprint"/>
+    <param name="base_frame_id"             value="base_link"/>
 
   </node>
 </launch>
