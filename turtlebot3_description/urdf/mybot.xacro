@@ -2,21 +2,23 @@
 
 <robot name="service_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-
-
   <xacro:include filename="$(find service_robot)/urdf/mybot.gazebo" />
   <xacro:include filename="$(find service_robot)/urdf/materials.xacro" />
   <xacro:include filename="$(find service_robot)/urdf/macros.xacro" />
 
+  <link name="base_footprint"/>
+  
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.010" rpy="0 0 0"/>
+  </joint>
+  
   <link name="base_link">
-    
-
     <inertial>
-      <origin
-        xyz="0.000508426452289656 5.85230715788032E-05 0.532734267230434"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass
-        value="56.8425142723701" />
+        value="8.2573504e-01" />
       <inertia
         ixx="4.9887479320299"
         ixy="-0.000665021365264802"
@@ -148,6 +150,8 @@
   </link>
 
 
+
+  
   <link
     name="right_wheel_link">
     <gravity>1</gravity>
@@ -270,7 +274,7 @@
       friction="1" />
   </joint>
   <link
-    name="laser">
+    name="cloud">
     <inertial>
       <origin
         xyz="0 0 0"
@@ -327,7 +331,7 @@
     <parent
       link="base_link" />
     <child
-      link="laser" />
+      link="cloud" />
     <axis
       xyz="0 0 0" />
   </joint>
