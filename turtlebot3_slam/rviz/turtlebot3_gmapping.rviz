@@ -8,8 +8,6 @@ Panels:
         - /TF1/Frames1
         - /LaserScan1
         - /Map1
-        - /PointCloud21
-        - /PointCloud21/Status1
       Splitter Ratio: 0.594406008720398
     Tree Height: 719
   - Class: rviz/Selection
@@ -29,7 +27,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: LaserScan
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -74,21 +72,41 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        caster_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        caster_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        caster_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        caster_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        cloud:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         imu_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        laser:
+        wheel_left_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        left_wheel_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        right_wheel_link:
+        wheel_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -110,17 +128,25 @@ Visualization Manager:
           Value: true
         base_link:
           Value: true
+        caster_1:
+          Value: true
+        caster_2:
+          Value: true
+        caster_3:
+          Value: true
+        caster_4:
+          Value: true
+        cloud:
+          Value: true
         imu_link:
-          Value: true
-        laser:
-          Value: true
-        left_wheel_link:
           Value: true
         map:
           Value: true
         odom:
           Value: true
-        right_wheel_link:
+        wheel_left_link:
+          Value: true
+        wheel_right_link:
           Value: true
       Marker Alpha: 1
       Marker Scale: 1
@@ -133,13 +159,21 @@ Visualization Manager:
           odom:
             base_footprint:
               base_link:
+                caster_1:
+                  {}
+                caster_2:
+                  {}
+                caster_3:
+                  {}
+                caster_4:
+                  {}
+                cloud:
+                  {}
                 imu_link:
                   {}
-                laser:
+                wheel_left_link:
                   {}
-                left_wheel_link:
-                  {}
-                right_wheel_link:
+                wheel_right_link:
                   {}
       Update Interval: 0
       Value: true
@@ -193,34 +227,6 @@ Visualization Manager:
       Unreliable: false
       Use Timestamp: false
       Value: true
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz/PointCloud2
-      Color: 255; 255; 255
-      Color Transformer: ""
-      Decay Time: 0
-      Enabled: true
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Min Color: 0; 0; 0
-      Name: PointCloud2
-      Position Transformer: ""
-      Queue Size: 10
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.009999999776482582
-      Style: Flat Squares
-      Topic: /cloud
-      Unreliable: false
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -248,7 +254,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -1.5707963705062866
+      Angle: -4.080801010131836
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
@@ -258,10 +264,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 35.900630950927734
+      Scale: 175.45042419433594
       Target Frame: map
-      X: 0.48704540729522705
-      Y: -0.013836545869708061
+      X: -0.5673834681510925
+      Y: -0.9371742010116577
     Saved: ~
 Window Geometry:
   Displays:
