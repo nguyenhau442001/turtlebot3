@@ -8,7 +8,6 @@ Panels:
         - /TF1/Tree1
         - /Global Map1/Costmap1
         - /Global Map1/Planner1
-        - /Local Map1
         - /Local Map1/Polygon1
         - /Local Map1/Costmap1
         - /Local Map1/Planner1
@@ -75,7 +74,7 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        base_scan:
+        caster_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false

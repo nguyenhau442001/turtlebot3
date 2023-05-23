@@ -6,7 +6,7 @@
   <arg name="initial_pose_a" default="0.0"/>
   
   <!-- AMCL -->
-  <node pkg="amcl" type="amcl" name="amcl">
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
 
     
     <remap from="scan"                      to="$(arg scan_topic)"/>       

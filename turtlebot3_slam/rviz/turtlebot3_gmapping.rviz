@@ -4,7 +4,9 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /TF1
         - /TF1/Frames1
+        - /LaserScan1
         - /Map1
       Splitter Ratio: 0.594406008720398
     Tree Height: 719

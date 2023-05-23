@@ -1,0 +1,268 @@
+<?xml version='1.0'?>
+
+<robot name="service_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find service_robot)/urdf/mybot.gazebo" />
+  <xacro:include filename="$(find service_robot)/urdf/materials.xacro" />
+  <xacro:include filename="$(find service_robot)/urdf/macros.xacro" />
+  
+  <link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Begin base_link -->
+  <link name="base_link">
+    <visual>
+      <origin
+        xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://service_robot/meshes/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+      <mesh filename="package://service_robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="42.124" />
+      <inertia
+        ixx="4.9887479320299"
+        ixy="-0.000665021365264802"
+        ixz="0.117153222467253"
+        iyy="3.29577614857709"
+        iyz="9.17818860502157E-07"
+        izz="2.8376872224854" />
+    </inertial>
+  </link>
+  <!-- End base_link -->
+
+  <!-- Connect base_link to wheel_left_link by wheel_left_joint-->
+  <joint name="wheel_left_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="wheel_left_link" />
+    <origin xyz="0.0047501 0.241 0.073998" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+  </joint>
+
+  <!-- Begin wheel_left_link -->
+ <link name="wheel_left_link">
+     <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://service_robot/meshes/wheel_left_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+      <mesh filename="package://service_robot/meshes/wheel_left_link.STL" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.238183102723088" />
+      <inertia
+        ixx="0.000429468568590385"
+        ixy="2.82194133801453E-08"
+        ixz="3.45307405175469E-09"
+        iyy="0.000813895351440581"
+        iyz="9.00820636504668E-09"
+        izz="0.000429448713932949" />
+    </inertial>
+  </link>
+<!-- End wheel_left_link -->
+
+   <!-- Connect base_link to wheel_right_link by wheel_right_joint-->
+  <joint
+    name="wheel_right_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="wheel_right_link" />
+    <origin	xyz="0.0049293 -0.235 0.0740" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+  </joint>
+
+<!-- Begin wheel_right_link -->
+ <link name="wheel_right_link">
+     <visual>
+      <origin
+        xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://service_robot/meshes/wheel_right_link.STL" />
+      </geometry>
+      <material name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+      <mesh filename="package://service_robot/meshes/wheel_right_link.STL" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin
+        xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.238183102723089" />
+      <inertia
+        ixx="0.000429448212823663"
+        ixy="5.93719116295323E-09"
+        ixz="-1.22691894940822E-09"
+        iyy="0.000813895360705823"
+        iyz="-2.90318197452589E-08"
+        izz="0.000429469050110622" />
+    </inertial>
+  </link>
+<!-- End wheel_right_link -->
+
+  <joint name="caster_1_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_1"/>
+    <origin xyz="0.165 0.09 0.031" rpy="0 0 0"/>
+  </joint>
+
+  <link name="caster_1">
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="caster_2_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_2"/>
+    <origin xyz="-0.165 0.09 0.031" rpy="0 0 0"/>
+  </joint>
+
+  <link name="caster_2">
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="caster_3_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_3"/>
+    <origin xyz="0.165 -0.09 0.031" rpy="0 0 0"/>
+  </joint>
+
+  <link name="caster_3">
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+    </collision>
+  </link>
+
+   <joint name="caster_4_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_4"/>
+    <origin xyz="-0.165 -0.09 0.031" rpy="0 0 0"/>
+  </joint>
+
+  <link name="caster_4">
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.03"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+    <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="imu_link"/>
+
+ <link
+    name="cloud">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://service_robot/meshes/lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://service_robot/meshes/lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.265061370158194 -0.000471092424494723 0.0889500000000105"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="cloud" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
