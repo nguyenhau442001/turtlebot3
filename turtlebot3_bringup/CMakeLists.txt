@@ -16,6 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   diagnostic_msgs
   turtlebot3_msgs
+  tf
 )
 
 ################################################################################
@@ -47,6 +48,11 @@ include_directories(
 add_executable(turtlebot3_diagnostics src/turtlebot3_diagnostics.cpp)
 add_dependencies(turtlebot3_diagnostics ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(turtlebot3_diagnostics ${catkin_LIBRARIES})
+
+# Bringup control motor
+add_executable(publish_planner_path src/publish_planner_path.cpp)
+target_link_libraries(publish_planner_path ${catkin_LIBRARIES})
+add_dependencies(publish_planner_path ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ################################################################################
 # Install

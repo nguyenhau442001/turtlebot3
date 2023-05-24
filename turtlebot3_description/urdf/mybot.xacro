@@ -32,7 +32,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-      <mesh filename="package://service_robot/meshes/base_link.STL" />
+	<cylinder length="1.238" radius="0.25"/>
       </geometry>
     </collision>
 
@@ -74,7 +74,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-      <mesh filename="package://service_robot/meshes/wheel_left_link.STL" />
+      <!--mesh filename="package://service_robot/meshes/wheel_left_link.STL" /-->
+      <cylinder length="0.033" radius="0.072"/>
       </geometry>
     </collision>
 
@@ -123,7 +124,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-      <mesh filename="package://service_robot/meshes/wheel_right_link.STL" />
+	<cylinder length="0.033" radius="0.072"/>
       </geometry>
     </collision>
 
@@ -212,7 +213,7 @@
   <link name="imu_link"/>
 
  <link
-    name="cloud">
+    name="base_scan">
     <inertial>
       <origin
         xyz="0 0 0"
@@ -261,7 +262,7 @@
     <parent
       link="base_link" />
     <child
-      link="cloud" />
+      link="base_scan" />
     <axis
       xyz="0 0 0" />
   </joint>
