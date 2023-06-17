@@ -32,7 +32,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-	<cylinder length="1.238" radius="0.25"/>
+	<mesh filename="package://service_robot/meshes/base_link.STL" />
       </geometry>
     </collision>
 
@@ -74,8 +74,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-      <!--mesh filename="package://service_robot/meshes/wheel_left_link.STL" /-->
-      <cylinder length="0.033" radius="0.072"/>
+      <mesh filename="package://service_robot/meshes/wheel_left_link.STL" />
+
       </geometry>
     </collision>
 
@@ -124,7 +124,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-	<cylinder length="0.033" radius="0.072"/>
+	<mesh filename="package://service_robot/meshes/wheel_right_link.STL" />
       </geometry>
     </collision>
 

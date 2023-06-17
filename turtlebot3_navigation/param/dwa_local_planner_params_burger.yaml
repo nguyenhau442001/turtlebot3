@@ -2,7 +2,7 @@ DWAPlannerROS:
 
 # Robot Configuration Parameters
   max_vel_x: 0.22
-  min_vel_x: -0.05
+  min_vel_x: -0.22
 
   max_vel_y: 0.0
   min_vel_y: 0.0
@@ -11,20 +11,20 @@ DWAPlannerROS:
   max_vel_trans:  0.22
   min_vel_trans:  0.11
 
-  max_vel_theta: 0.1
-  min_vel_theta: 0.05
+  max_vel_theta: 0.75
+  min_vel_theta: 0.37
 
   acc_lim_x: 2.5
   acc_lim_y: 0.0
   acc_lim_theta: 3.2  
 
 # Goal Tolerance Parameters
-  xy_goal_tolerance: 0.2
-  yaw_goal_tolerance: 0.17
+  xy_goal_tolerance: 0.1
+  yaw_goal_tolerance: 0.12 #0.17: still good
   latch_xy_goal_tolerance: false
 
 # Forward Simulation Parameters
-  sim_time: 2.0
+  sim_time: 4.0
   vx_samples: 20
   vy_samples: 0
   vth_samples: 40
@@ -34,7 +34,7 @@ DWAPlannerROS:
   path_distance_bias: 32.0
   goal_distance_bias: 20.0
   occdist_scale: 0.02
-  forward_point_distance: 0.325
+  forward_point_distance: 0.3250
   stop_time_buffer: 0.2
   scaling_speed: 0.25
   max_scaling_factor: 0.2
