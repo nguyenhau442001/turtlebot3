@@ -27,4 +27,6 @@
     <node pkg="rviz" type="rviz" name="rviz" required="true"
           args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/>
   </group>
+  
+  <node pkg="turtlebot3_navigation" name="goal_publisher" type="publish_goal.py" />
 </launch>

@@ -1,268 +1,165 @@
-<?xml version='1.0'?>
+<?xml version="1.0" ?>
+<robot name="turtlebot3_burger" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find turtlebot3_description)/urdf/common_properties.xacro"/>
+  <xacro:include filename="$(find turtlebot3_description)/urdf/turtlebot3_burger.gazebo.xacro"/>
 
-<robot name="service_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
-
-  <xacro:include filename="$(find service_robot)/urdf/mybot.gazebo" />
-  <xacro:include filename="$(find service_robot)/urdf/materials.xacro" />
-  <xacro:include filename="$(find service_robot)/urdf/macros.xacro" />
-  
   <link name="base_footprint"/>
 
   <joint name="base_joint" type="fixed">
     <parent link="base_footprint"/>
     <child link="base_link"/>
-    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <origin xyz="0.0 0.0 0.010" rpy="0 0 0"/>
   </joint>
 
-  <!-- Begin base_link -->
   <link name="base_link">
     <visual>
-      <origin
-        xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="-0.032 0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://service_robot/meshes/base_link.STL" />
+        <mesh filename="package://turtlebot3_description/meshes/bases/burger_base.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="">
-        <color rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
-      </material>
+      <material name="light_black"/>
     </visual>
 
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="-0.032 0 0.070" rpy="0 0 0"/>
       <geometry>
-      <mesh filename="package://service_robot/meshes/base_link.STL" />
+        <box size="0.140 0.140 0.143"/>
       </geometry>
     </collision>
 
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="42.124" />
-      <inertia
-        ixx="4.9887479320299"
-        ixy="-0.000665021365264802"
-        ixz="0.117153222467253"
-        iyy="3.29577614857709"
-        iyz="9.17818860502157E-07"
-        izz="2.8376872224854" />
+      <mass value="8.2573504e-01"/>
+      <inertia ixx="2.2124416e-03" ixy="-1.2294101e-05" ixz="3.4938785e-05"
+               iyy="2.1193702e-03" iyz="-5.0120904e-06"
+               izz="2.0064271e-03" />
     </inertial>
   </link>
-  <!-- End base_link -->
 
-  <!-- Connect base_link to wheel_left_link by wheel_left_joint-->
   <joint name="wheel_left_joint" type="continuous">
-    <parent link="base_link" />
-    <child link="wheel_left_link" />
-    <origin xyz="0.0047501 0.241 0.073998" rpy="0 0 0" />
-    <axis xyz="0 1 0" />
+    <parent link="base_link"/>
+    <child link="wheel_left_link"/>
+    <origin xyz="0.0 0.08 0.023" rpy="-1.57 0 0"/>
+    <axis xyz="0 0 1"/>
   </joint>
 
-  <!-- Begin wheel_left_link -->
- <link name="wheel_left_link">
-     <visual>
+  <link name="wheel_left_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <geometry>
+        <mesh filename="package://turtlebot3_description/meshes/wheels/left_tire.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark"/>
+    </visual>
+
+    <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://service_robot/meshes/wheel_left_link.STL" />
-      </geometry>
-      <material name="">
-        <color rgba="0 0 0 1" />
-      </material>
-    </visual>
-
-
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-      <mesh filename="package://service_robot/meshes/wheel_left_link.STL" />
+        <cylinder length="0.018" radius="0.033"/>
       </geometry>
     </collision>
 
     <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0.238183102723088" />
-      <inertia
-        ixx="0.000429468568590385"
-        ixy="2.82194133801453E-08"
-        ixz="3.45307405175469E-09"
-        iyy="0.000813895351440581"
-        iyz="9.00820636504668E-09"
-        izz="0.000429448713932949" />
-    </inertial>
+      <origin xyz="0 0 0" />
+      <mass value="2.8498940e-02" />
+      <inertia ixx="1.1175580e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09"
+               iyy="1.1192413e-05" iyz="-1.4400107e-11"
+               izz="2.0712558e-05" />
+      </inertial>
   </link>
-<!-- End wheel_left_link -->
 
-   <!-- Connect base_link to wheel_right_link by wheel_right_joint-->
-  <joint
-    name="wheel_right_joint" type="continuous">
-    <parent link="base_link" />
-    <child link="wheel_right_link" />
-    <origin	xyz="0.0049293 -0.235 0.0740" rpy="0 0 0" />
-    <axis xyz="0 1 0" />
+  <joint name="wheel_right_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_right_link"/>
+    <origin xyz="0.0 -0.080 0.023" rpy="-1.57 0 0"/>
+    <axis xyz="0 0 1"/>
   </joint>
 
-<!-- Begin wheel_right_link -->
- <link name="wheel_right_link">
-     <visual>
-      <origin
-        xyz="0 0 0" rpy="0 0 0" />
+  <link name="wheel_right_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
       <geometry>
-        <mesh filename="package://service_robot/meshes/wheel_right_link.STL" />
+        <mesh filename="package://turtlebot3_description/meshes/wheels/right_tire.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
+      <material name="dark"/>
     </visual>
 
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-      <mesh filename="package://service_robot/meshes/wheel_right_link.STL" />
+        <cylinder length="0.018" radius="0.033"/>
       </geometry>
     </collision>
 
     <inertial>
-      <origin
-        xyz="0 0 0" rpy="0 0 0" />
-      <mass value="0.238183102723089" />
-      <inertia
-        ixx="0.000429448212823663"
-        ixy="5.93719116295323E-09"
-        ixz="-1.22691894940822E-09"
-        iyy="0.000813895360705823"
-        iyz="-2.90318197452589E-08"
-        izz="0.000429469050110622" />
+      <origin xyz="0 0 0" />
+      <mass value="2.8498940e-02" />
+      <inertia ixx="1.1175580e-05" ixy="-4.2369783e-11" ixz="-5.9381719e-09"
+               iyy="1.1192413e-05" iyz="-1.4400107e-11"
+               izz="2.0712558e-05" />
+      </inertial>
+  </link>
+
+  <joint name="caster_back_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_back_link"/>
+    <origin xyz="-0.081 0 -0.004" rpy="-1.57 0 0"/>
+  </joint>
+
+  <link name="caster_back_link">
+    <collision>
+      <origin xyz="0 0.001 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.030 0.009 0.020"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="0.005" />
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+               iyy="0.001" iyz="0.0"
+               izz="0.001" />
     </inertial>
   </link>
-<!-- End wheel_right_link -->
 
-  <joint name="caster_1_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="caster_1"/>
-    <origin xyz="0.165 0.09 0.031" rpy="0 0 0"/>
-  </joint>
-
-  <link name="caster_1">
-    <collision>
-      <origin xyz="0.0 0.0 0.0" rpy=" 0 0 0"/>
-      <geometry>
-        <sphere radius="0.03"/>
-      </geometry>
-    </collision>
-  </link>
-
-  <joint name="caster_2_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="caster_2"/>
-    <origin xyz="-0.165 0.09 0.031" rpy="0 0 0"/>
-  </joint>
-
-  <link name="caster_2">
-    <collision>
-      <origin xyz="0.0 0.0 0.0" rpy=" 0 0 0"/>
-      <geometry>
-        <sphere radius="0.03"/>
-      </geometry>
-    </collision>
-  </link>
-
-  <joint name="caster_3_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="caster_3"/>
-    <origin xyz="0.165 -0.09 0.031" rpy="0 0 0"/>
-  </joint>
-
-  <link name="caster_3">
-    <collision>
-      <origin xyz="0.0 0.0 0.0" rpy=" 0 0 0"/>
-      <geometry>
-        <sphere radius="0.03"/>
-      </geometry>
-    </collision>
-  </link>
-
-   <joint name="caster_4_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="caster_4"/>
-    <origin xyz="-0.165 -0.09 0.031" rpy="0 0 0"/>
-  </joint>
-
-  <link name="caster_4">
-    <collision>
-      <origin xyz="0.0 0.0 0.0" rpy=" 0 0 0"/>
-      <geometry>
-        <sphere radius="0.03"/>
-      </geometry>
-    </collision>
-  </link>
-
-
-    <joint name="imu_joint" type="fixed">
+  <joint name="imu_joint" type="fixed">
     <parent link="base_link"/>
     <child link="imu_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <origin xyz="-0.032 0 0.068" rpy="0 0 0"/>
   </joint>
 
   <link name="imu_link"/>
 
- <link
-    name="base_scan">
-    <inertial>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <mass
-        value="0" />
-      <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
-    </inertial>
+  <joint name="scan_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_scan"/>
+    <origin xyz="-0.032 0 0.172" rpy="0 0 0"/>
+  </joint>
+
+  <link name="base_scan">
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://service_robot/meshes/lidar.STL" />
+        <mesh filename="package://turtlebot3_description/meshes/sensors/lds.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
+      <material name="dark"/>
     </visual>
+
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0.015 0 -0.0065" rpy="0 0 0"/>
       <geometry>
-        <mesh
-          filename="package://service_robot/meshes/lidar.STL" />
+        <cylinder length="0.0315" radius="0.055"/>
       </geometry>
     </collision>
+
+    <inertial>
+      <mass value="0.114" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+               iyy="0.001" iyz="0.0"
+               izz="0.001" />
+    </inertial>
   </link>
 
-  <joint
-    name="lidar_joint"
-    type="fixed">
-    <origin
-      xyz="0.265061370158194 -0.000471092424494723 0.0889500000000105"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="base_scan" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
 </robot>

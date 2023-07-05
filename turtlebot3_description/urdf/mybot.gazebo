@@ -6,8 +6,8 @@
       <legacyMode>false</legacyMode>
       <alwaysOn>true</alwaysOn>
       <updateRate>100</updateRate>
-      <leftJoint>left_wheel_joint</leftJoint>
-      <rightJoint>right_wheel_joint</rightJoint>
+      <leftJoint>wheel_left_joint</leftJoint>
+      <rightJoint>wheel_right_joint</rightJoint>
       <wheelSeparation>0.4</wheelSeparation>
       <wheelDiameter>0.2</wheelDiameter>
       <torque>10</torque>
@@ -18,7 +18,7 @@
     </plugin>
   </gazebo>
 
-  <gazebo reference="left_wheel_link">
+  <gazebo reference="wheel_left_link">
     <material>Gazebo/Black</material>
     <mu>0.8</mu>
     <mu2>0.8</mu2>
@@ -28,7 +28,7 @@
     <erp>0.2</erp>
   </gazebo>
 
-  <gazebo reference="right_wheel_link">
+  <gazebo reference="wheel_right_link">
     <mu>0.8</mu>
     <mu2>0.8</mu2>
     <material>Gazebo/Black</material>

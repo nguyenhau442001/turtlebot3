@@ -2,9 +2,9 @@
 
 <robot name="service_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find service_robot)/urdf/mybot.gazebo" />
-  <xacro:include filename="$(find service_robot)/urdf/materials.xacro" />
-  <xacro:include filename="$(find service_robot)/urdf/macros.xacro" />
+  <xacro:include filename="$(find turtlebot3_description)/urdf/mybot.gazebo" />
+  <xacro:include filename="$(find turtlebot3_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find turtlebot3_description)/urdf/macros.xacro" />
   
   <link name="base_footprint"/>
 
@@ -20,7 +20,7 @@
       <origin
         xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://service_robot/meshes/base_link.STL" />
+        <mesh filename="package://turtlebot3_description/service_robot_meshes/base_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
@@ -32,7 +32,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-	<mesh filename="package://service_robot/meshes/base_link.STL" />
+	<mesh filename="package://turtlebot3_description/service_robot_meshes/base_link.STL" />
       </geometry>
     </collision>
 
@@ -63,7 +63,7 @@
      <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://service_robot/meshes/wheel_left_link.STL" />
+        <mesh filename="package://turtlebot3_description/service_robot_meshes/wheel_left_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0 0 0 1" />
@@ -74,7 +74,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-      <mesh filename="package://service_robot/meshes/wheel_left_link.STL" />
+      <mesh filename="package://turtlebot3_description/service_robot_meshes/wheel_left_link.STL" />
 
       </geometry>
     </collision>
@@ -111,7 +111,7 @@
       <origin
         xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://service_robot/meshes/wheel_right_link.STL" />
+        <mesh filename="package://turtlebot3_description/service_robot_meshes/wheel_right_link.STL" />
       </geometry>
       <material name="">
         <color
@@ -124,7 +124,7 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-	<mesh filename="package://service_robot/meshes/wheel_right_link.STL" />
+	<mesh filename="package://turtlebot3_description/service_robot_meshes/wheel_right_link.STL" />
       </geometry>
     </collision>
 
@@ -234,7 +234,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://service_robot/meshes/lidar.STL" />
+          filename="package://turtlebot3_description/service_robot_meshes/lidar.STL" />
       </geometry>
       <material
         name="">
@@ -248,7 +248,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://service_robot/meshes/lidar.STL" />
+          filename="package://turtlebot3_description/service_robot_meshes/lidar.STL" />
       </geometry>
     </collision>
   </link>

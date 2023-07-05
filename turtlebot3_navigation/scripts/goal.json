@@ -1,0 +1,162 @@
+{
+    "Home": {
+        "isPublished": false,
+        "pose": {
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.27094148735514906,
+                "w": 0.9625958188304059
+            }
+        }
+    },
+    "T1": {
+        "isPublished": false,
+        "pose": {
+            "position": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.0
+            },
+            "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            }
+        }
+    },
+    "T2": {
+        "isPublished": false,
+        "pose": {
+            "position": {
+                "x": -0.9,
+                "y": 0.4,
+                "z": 0.0
+            },
+            "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            }
+        }
+    },
+    "T3": {
+        "isPublished": false,
+        "pose": {
+            "position": {
+                "x": -0.5,
+                "y": 0.5,
+                "z": 0.0
+            },
+            "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            }
+        }
+    },
+    "T4": {
+        "isPublished": false,
+        "pose": {
+            "position": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.0
+            },
+            "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            }
+        }
+    },
+    "T5": {
+        "isPublished": false,
+        "pose": {
+            "position": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.0
+            },
+            "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            }
+        }
+    },
+    "T6": {
+        "isPublished": false,
+        "pose": {
+            "position": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.0
+            },
+            "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            }
+        }
+    },
+    "T7": {
+        "isPublished": false,
+        "pose": {
+            "position": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.0
+            },
+            "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            }
+        }
+    },
+    "T8": {
+        "isPublished": false,
+        "pose": {
+            "position": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.0
+            },
+            "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            }
+        }
+    },
+    "T9": {
+        "isPublished": false,
+        "pose": {
+            "position": {
+                "x": 0.5,
+                "y": 0.5,
+                "z": 0.0
+            },
+            "orientation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            }
+        }
+    }
+}
