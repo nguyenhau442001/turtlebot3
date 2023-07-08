@@ -1,11 +1,6 @@
 # PART I. OVERVIEW ESSENTIAL PART COMMUNICATE
 1.Introduction
-
-In order to communicate with ROS, the first step we need do is install the rosserial package. But you need to determine what is the package fit your microcontroller, I use STM32DUINO so I will install rosserial package for arduino.
-
-![image](https://user-images.githubusercontent.com/105471622/196738444-9dd84fe6-eab7-49eb-9ac8-48d59ac44471.png)
-
-Next step, we need determine how many topic neccesary for this application.
+WWe need determine how many topic neccesary for this application.
 
 Publisher node (buffer size is 1024 bytes)
 1.	sensor_state [turtlebot3_msgs/SensorState]
@@ -136,4 +131,4 @@ In the current working folder, you should now have a file called "frames.pdf". O
  2. export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
  3. export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_navigation move_base.launch
  4. roslaunch explore_lite explore.launch
- 5. roslaunch error_calculator error_calculator.launch
+
