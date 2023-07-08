@@ -8,24 +8,20 @@ In order to communicate with ROS, the first step we need do is install the rosse
 Next step, we need determine how many topic neccesary for this application.
 
 Publisher node (buffer size is 1024 bytes)
-1.	sensor_state [turtlebot3_msgs/SensorState]  (may be need)
-2.	version_info [turtlebot3_msgs/VersionInfo] (optional)
-3.	imu [sensor_msgs/Imu] (compulsory)
-4.	odom [nav_msgs/Odometry] (compulsory)
-5.	battery_state [sensor_msgs/BatteryState] (optional)
-6.	joint_states [sensor_msgs/JointState] (compulsory)
-7.	magnetic_field [sensor_msgs/MagneticField] (compulsory)
-8.	/tf [tf/tfMessage] (compulsory)
+1.	sensor_state [turtlebot3_msgs/SensorState]
+2.	imu [sensor_msgs/Imu] 
+3.	odom [nav_msgs/Odometry] 
+4.	joint_states [sensor_msgs/JointState]
+5.	[tf/tfMessage] 
 
 Subscribe node (buffer size is 1024 bytes)
-1.	cmd_vel [geometry_msgs/Twist] (compulsory)
-2.	reset [std_msgs/Empty] (compulsory)
+1.	cmd_vel [geometry_msgs/Twist]
+2.	reset [std_msgs/Empty]
 
 Set up TF (Transformation) 
 1.	 Setup TF on Odometry [odom]
 2.	 Setup TF on IMU [imu_link]
-3.	 Setup TF on MagneticField [mag_link]
-4.	 Setup TF on JointState [base_link]
+33.	 Setup TF on JointState [base_link]
 
 
 # PART 2: KINETIC DIFFERENTIAL DRIVE MOBILE BOT
@@ -100,30 +96,6 @@ The workflow of control mobile base
 
 Keep in mind that the velocity pair sent down by Navigation stack is not constant in continuous time but it is discrete, i.e. every time delta T, this velocity pair value it will be different, it is still constant, but only for a period of delta T. So to control the robot base, we update the velocity value, but because the time is very small (select 0.001s), it can be considered as continuous.
 
-# PART3 MAGNETOMETER CALIBRATION
-
-MPU9250 is actually an IMU (Inertial Measurement Unit) sensor and a Magnetometer, the task of the IMU will measure inertia (including angular velocity and linear acceleration), while the Magnetometer will measure the local magnetic field. around the sensor.
-The MPU9250 helps to give an exact orientation of an object with respect to its environment. It plays an important role in navigating aircraft and spacecraft. Similar in applications of self-propelled robots, we can use MPU9250 to determine the direction and coordinates of the robot. From quantities such as acceleration, angular velocity, magnetic field of the robot then converted to rotation angle of the robot.
-Currently, I still not yet using Madgwick for some reason such as : error due to integral, drift. I compute yaw angle base on magnetic field. Unfortunely, hard ion and soft ion cause distortion for magnetic field. So before use it, we need to calibrate it!!!!!!!
-
-![image](https://user-images.githubusercontent.com/105471622/196747454-4ccb4b54-f55b-4860-8dbc-64c5a87708be.png)
-![image](https://user-images.githubusercontent.com/105471622/196747463-0b68a5cc-1d76-4ce3-bcfa-af1b18e30b0a.png)
-![image](https://user-images.githubusercontent.com/105471622/196747485-adc2ecc4-9105-45e3-84cf-9c7852b76c33.png)
-
-We can completely edit the magnetic field with the formula below:
-
-![image](https://user-images.githubusercontent.com/105471622/196747610-597e5c3b-2191-46ae-8653-e50d8d5e3e98.png)
-
-Where h_hat: calibration magnetic matrix, h_m magnetic sensor magnetic matrix, b: offset matrix, M: hard and soft iron matrix system.
-
-The result after calibrated:
-
-![image](https://user-images.githubusercontent.com/105471622/196747814-774c0011-895e-46ed-9a9d-c82106091522.png)
-
-The yaw angle equal atan(my,mx).
-
-
- 
 PART 4: TRANSFORMATION IN ROBOTIC
 
 This section very importance for the autonomous robot system. If you already learn about robot engineering subject, you heard about "transformation" and "frame". In ROS, we dont use "frame", we use "link", it has the same meaning.
