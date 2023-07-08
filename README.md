@@ -1,6 +1,7 @@
 # PART I. OVERVIEW ESSENTIAL PART COMMUNICATE
 1.Introduction
-WWe need determine how many topic neccesary for this application.
+
+We need determine how many topic neccesary for this application.
 
 Publisher node (buffer size is 1024 bytes)
 1.	sensor_state [turtlebot3_msgs/SensorState]
